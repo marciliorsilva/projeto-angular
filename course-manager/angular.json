@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "course-manager"
+  "defaultProject": "course-manager",
+  "cli": {
+    "analytics": false
+  }
 }
