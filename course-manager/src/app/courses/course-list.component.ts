@@ -12,21 +12,21 @@ export class CourseListComponent implements OnInit{
             {
                 id: 1,
                 name: 'Angular: Forms',
-                imageUrl: '',
+                imageUrl: '/assets/images/forms.png',
                 price: 99.99,
                 code: 'XPS-8796',
                 duration : 120,
-                rating: 5.4,
+                rating: 4.5,
                 releaseDate: '24/11/2020'
             },
             {
                 id: 1,
-                name: 'React: Forms',
-                imageUrl: '',
+                name: 'Angular: HTTP',
+                imageUrl: '/assets/images/http.png',
                 price: 109.99,
                 code: 'RPS-8492',
                 duration : 100,
-                rating: 7.4,
+                rating: 3.0,
                 releaseDate: '25/11/2020'
             }
             
