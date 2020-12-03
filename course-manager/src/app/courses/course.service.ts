@@ -6,12 +6,26 @@ import { Course } from './course';
     providedIn: 'root'
 })
 export class CourseService{
-    retriveAll(): Course[] {
+    retrieveAll(): Course[] {
         return COURSES;
+    }
+
+    retrieveById(id: number): Course | undefined{
+       
+        return COURSES.find((courseItereator: Course ) => courseItereator.id === id);
+    }
+
+    save(course: Course): void{
+        if(course.id){
+            const index = COURSES.findIndex((courseItereator: Course ) => courseItereator.id === course.id);
+            COURSES[index] = course;
+        }
     }
 }
 
-let COURSES: Course[] = [
+
+
+let COURSES: Course[]  = [
     {
         id: 1,
         name: 'Angular: CLI',

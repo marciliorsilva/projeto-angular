@@ -8,6 +8,7 @@ export class Course{
     rating: number = 0;
     releaseDate: string = '';
     description: string = '';
+
     
    
 }
