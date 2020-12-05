@@ -1,4 +1,3 @@
-import { isNull } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Course } from './course';
@@ -9,22 +8,25 @@ import { CourseService } from './course.service';
 })
 export class CourseInfoComponente implements OnInit{
     
-    course ?: Course;
-    idTemp: string = '';
-
-
+    course = new Course(); 
+  
     constructor(private activatedRoute: ActivatedRoute, private courseService: CourseService){}
     
     ngOnInit(): void {
-        this.idTemp = String(this.activatedRoute.snapshot.paramMap.get('id')); 
-        this.course = this.courseService.retrieveById(parseInt(this.idTemp));
+        
+        this.courseService.retrieveById(+String(this.activatedRoute.snapshot.paramMap.get('id'))).subscribe({
+            next: course => this.course = course,
+            error: err => console.log('Error', err)
+        });
 
     }
 
-    save():void {
-        if(this.course !== undefined){
-            this.courseService.save(this.course);
-        }
+    save():void{
+        this.courseService.save(this.course).subscribe({
+            next: course => console.log('Saved with success', course),
+            error: err => console.log('Error', err)
+        });
+      
         
     }
 }

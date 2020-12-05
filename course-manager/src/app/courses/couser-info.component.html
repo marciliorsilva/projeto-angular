@@ -1,6 +1,6 @@
 <h2> Course info</h2>
 <hr/>
-<form #courseForm="ngForm">
+<form #courseForm="ngForm" *ngIf="course">
     <div class="form-group row">
         <label for="" class="col-sm-2  col-form-label">Name</label>
     
@@ -45,6 +45,6 @@
         </div>
     </div>
 
-    <button [disabled]="courseForm.invalid" (click)="save" class="btn btn-primary mr-2">Save</button>
-    <button [routerLink]="['/courses']" class="btn btn-secondary">Back</button>
+    <button  [disabled]="courseForm.invalid" (click)="save()" class="btn btn-primary mr-2">Save</button>
+    <button  [routerLink]="['/courses']" class="btn btn-secondary">Back</button>
 </form>
