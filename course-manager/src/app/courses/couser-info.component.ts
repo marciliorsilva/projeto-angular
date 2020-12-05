@@ -6,7 +6,7 @@ import { CourseService } from './course.service';
 @Component({
     templateUrl: './couser-info.component.html'
 })
-export class CourseInfoComponente implements OnInit{
+export class CourseInfoComponent implements OnInit{
     
     course = new Course(); 
   
